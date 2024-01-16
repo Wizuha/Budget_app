@@ -19,8 +19,6 @@
   gap: 10px;
 }
 
-
-
 .achats {
   width: 50%;
   display: flex;
@@ -75,6 +73,10 @@
   border-radius: 5px;
   border: #5f4d1d;
   padding: 0.5em;
+}
+
+.sum button:hover {
+  box-shadow: 1px 0px 10px #ffc8004a, 1px 0px 10px #ffc8005e;
 }
 
 .totalPurchase {

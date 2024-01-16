@@ -54,6 +54,6 @@
   padding: 0.5em;
 }
 
-.edit-content button :hover {
+.edit-content button:hover {
   box-shadow: 1px 0px 10px #ffc8004a, 1px 0px 10px #ffc8005e;
 }
