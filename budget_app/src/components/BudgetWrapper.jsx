@@ -121,6 +121,10 @@ export default function BudgetWrapper() {
     SetGains(gains.filter((gain) => gain.id !== id));
   };
 
+  const closeEdit = () => {
+    setModifInput(!modifInput);
+  }
+
   return (
     <div className="Application">
       <BudgetForm addP={addPurchase} addG={addGain} />
@@ -140,6 +144,7 @@ export default function BudgetWrapper() {
           choiceBudget={choiceBudget}
           modifPurchase={modifPurchase}
           modifGain={modifGain}
+          closeEdit={closeEdit}
         />
       ) : null}
     </div>

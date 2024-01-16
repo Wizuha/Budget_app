@@ -1,56 +1,57 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import "./isEditingBudget.css";
 
-export default function EditBudgetApp({choiceBudget, modifPurchase, modifGain}) {
+export default function EditBudgetApp({
+  choiceBudget,
+  modifPurchase,
+  modifGain,
+  closeEdit
+}) {
   const [newValue, SetNewValue] = useState("");
 
   const hadnleSubmitP = () => {
     if (newValue.trim() === "") {
       alert("Entrez une valeur");
-    }
-    else {
+    } else {
       modifPurchase(newValue);
       SetNewValue("");
     }
- 
-  }
+  };
 
   const hadnleSubmitG = () => {
-    if(newValue.trim() === ""){
-      alert("Entrez une valeur")
-    }
-    else {
+    if (newValue.trim() === "") {
+      alert("Entrez une valeur");
+    } else {
       modifGain(newValue);
       SetNewValue("");
     }
-    
-  }
+  };
 
   const handleChange = (event) => {
-        if (
-          /^\d*\.?\d*$/.test(event.target.value) ||
-          event.target.value === "" 
-        ) {
-          SetNewValue(event.target.value);
-        }
-
-  }
+    if (/^\d*\.?\d*$/.test(event.target.value) || event.target.value === "") {
+      SetNewValue(event.target.value);
+    }
+  };
 
   return (
-    <div>
-      <input
-        value={newValue}
-        onChange={handleChange}
-        type="text"
-        placeholder="Nouvelle valeur"
-      />
-      {choiceBudget === true ? (
-        <button onClick={hadnleSubmitP}>
-          Modifier la somme
-        </button>
-      ) : (
-        <button onClick={hadnleSubmitG}>
-          Modifier la somme</button>
-      )}
+    <div className="editBudgetAll">
+      <div className="edit-content">
+        <div className="close">
+          <div className="close-content" onClick={closeEdit} >X</div>
+        </div>
+        <h1>Modification</h1>
+        <input
+          value={newValue}
+          onChange={handleChange}
+          type="text"
+          placeholder="Nouvelle valeur"
+        />
+        {choiceBudget === true ? (
+          <button onClick={hadnleSubmitP}>Modifier la somme</button>
+        ) : (
+          <button onClick={hadnleSubmitG}>Modifier la somme</button>
+        )}
+      </div>
     </div>
   );
 }
