@@ -5,7 +5,9 @@ export default function EditBudgetApp({
   choiceBudget,
   modifPurchase,
   modifGain,
-  closeEdit
+  closeEdit,
+  displayPurchases,
+  displayGains,
 }) {
   const [newValue, SetNewValue] = useState("");
 
@@ -37,15 +39,24 @@ export default function EditBudgetApp({
     <div className="editBudgetAll">
       <div className="edit-content">
         <div className="close">
-          <div className="close-content" onClick={closeEdit} >X</div>
+          <div className="close-content" onClick={closeEdit}>
+            X
+          </div>
         </div>
         <h1>Modification</h1>
-        <input
-          value={newValue}
-          onChange={handleChange}
-          type="text"
-          placeholder="Nouvelle valeur"
-        />
+        <div className="modif-content">
+          <input
+            value={newValue}
+            onChange={handleChange}
+            type="text"
+            placeholder={
+              choiceBudget === true
+                ? displayPurchases.map((e) => `${e.purchase}€`).join(", ")
+                : displayGains.map((e) => `${e.gain}€`).join(", ")
+            }
+          />
+        </div>
+
         {choiceBudget === true ? (
           <button onClick={hadnleSubmitP}>Modifier la somme</button>
         ) : (

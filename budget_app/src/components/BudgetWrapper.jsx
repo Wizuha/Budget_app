@@ -145,6 +145,8 @@ export default function BudgetWrapper() {
           modifPurchase={modifPurchase}
           modifGain={modifGain}
           closeEdit={closeEdit}
+          displayGains={gains}
+          displayPurchases={purchases}
         />
       ) : null}
     </div>

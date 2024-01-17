@@ -37,6 +37,12 @@
   cursor: default;
 }
 
+.modif-content{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .close-content:hover{
   box-shadow: 1px 0px 10px #ffc8004a, 1px 0px 10px #ffc8005e;
   background-color: #23241b;

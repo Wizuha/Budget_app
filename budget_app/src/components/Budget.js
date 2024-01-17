@@ -7,9 +7,7 @@ import "./Budget.css";
 
 export default function Budget({
   budgetPurchases,
-  totalP,
   budgetGains,
-  totalG,
   diffPurchasesGains,
   ciblingP,
   ciblingG,
@@ -36,7 +34,6 @@ export default function Budget({
               </div>
             </div>
           ))}
-          {/* <p>{totalP}€</p> */}
         </div>
         <div className="gains">
           <h1>Gains</h1>
@@ -55,7 +52,6 @@ export default function Budget({
               </div>
             </div>
           ))}
-          {/* <p>{totalG}€</p> */}
         </div>
       </div>
       <div className="totalPurchase">{diffPurchasesGains}€</div>
